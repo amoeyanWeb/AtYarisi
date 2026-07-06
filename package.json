@@ -1,0 +1,20 @@
+{
+  "name": "tjk-race-dashboard",
+  "version": "1.0.0",
+  "description": "TJK (Turkiye Jokey Kulubu) at yarisi verilerini canli ceken ve tahmin ureten dashboard",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-fetch": "^2.7.0",
+    "cheerio": "^1.0.0-rc.12",
+    "papaparse": "^5.4.1",
+    "iconv-lite": "^0.6.3"
+  }
+}

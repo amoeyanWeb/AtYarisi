@@ -115,6 +115,7 @@ function renderRace(race) {
   return `
     <div class="race-card">
       <h3>${race.raceTitle}</h3>
+      <div class="table-scroll">
       <table>
         <thead>
           <tr>
@@ -143,6 +144,7 @@ function renderRace(race) {
             .join("")}
         </tbody>
       </table>
+      </div>
     </div>
   `;
 }

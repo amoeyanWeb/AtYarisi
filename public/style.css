@@ -8,7 +8,9 @@
   --border: #2a3648;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -27,7 +29,9 @@ body::before {
   position: fixed;
   inset: 0;
   z-index: -2;
-  background: url("2.jfif") center center / cover no-repeat fixed, var(--bg);
+  background:
+    url("2.jfif") center center / cover no-repeat fixed,
+    var(--bg);
 }
 
 /* Okunabilirlik icin resmin uzerine koyu bir katman */
@@ -72,16 +76,21 @@ h1 {
 .site-logo {
   grid-column: 3;
   justify-self: end;
-  width: 48px;
-  height: 48px;
+  width: 60px;
+  height: 60px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 50%;
   border: 1px solid var(--border);
 }
 
-.tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
 
-.tab-btn, #refreshBtn {
+.tab-btn,
+#refreshBtn {
   background: var(--card);
   border: 1px solid var(--border);
   color: var(--text);
@@ -91,9 +100,17 @@ h1 {
   font-size: 0.9rem;
 }
 
-.tab-btn.active { background: var(--accent); color: #0a0a0a; font-weight: 600; }
+.tab-btn.active {
+  background: var(--accent);
+  color: #0a0a0a;
+  font-weight: 600;
+}
 
-#status { margin-top: 8px; font-size: 0.8rem; color: var(--muted); }
+#status {
+  margin-top: 8px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
 
 @media (max-width: 700px) {
   header {
@@ -101,10 +118,22 @@ h1 {
     justify-items: center;
     text-align: center;
   }
-  .header-left { grid-column: 1; justify-self: center; }
-  h1 { grid-column: 1; white-space: normal; font-size: 1.5rem; }
-  .tabs { justify-content: center; }
-  .site-logo { grid-column: 1; justify-self: center; }
+  .header-left {
+    grid-column: 1;
+    justify-self: center;
+  }
+  h1 {
+    grid-column: 1;
+    white-space: normal;
+    font-size: 1.5rem;
+  }
+  .tabs {
+    justify-content: center;
+  }
+  .site-logo {
+    grid-column: 1;
+    justify-self: center;
+  }
 }
 
 .layout {
@@ -158,19 +187,29 @@ h1 {
   justify-content: space-between;
   gap: 8px;
   /* kabartma / gölge efekti */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, border-radius 0.15s ease;
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background 0.12s ease,
+    border-radius 0.15s ease;
 }
 
 .city-tab:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .city-tab.active {
   background: linear-gradient(145deg, var(--accent), #24a35d);
   color: #0a0a0a;
-  box-shadow: 0 4px 14px rgba(46, 204, 113, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 4px 14px rgba(46, 204, 113, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .city-tab.open {
@@ -197,7 +236,10 @@ h1 {
 }
 
 /* --- Sehir tiklaninca acilan kosu menusu --- */
-.city-group { display: flex; flex-direction: column; }
+.city-group {
+  display: flex;
+  flex-direction: column;
+}
 
 .city-races-list {
   display: none;
@@ -223,7 +265,9 @@ h1 {
   border-bottom: 1px solid var(--border);
 }
 
-.race-link:last-child { border-bottom: none; }
+.race-link:last-child {
+  border-bottom: none;
+}
 
 .race-link:hover {
   background: rgba(255, 255, 255, 0.05);
@@ -242,11 +286,23 @@ h1 {
   min-width: 0;
 }
 
-.loading, .error { color: var(--muted); text-align: center; padding: 40px; }
-.error { color: #e74c3c; }
+.loading,
+.error {
+  color: var(--muted);
+  text-align: center;
+  padding: 40px;
+}
+.error {
+  color: #e74c3c;
+}
 
-.city-block { margin-bottom: 32px; }
-.city-block h2 { border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+.city-block {
+  margin-bottom: 32px;
+}
+.city-block h2 {
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 6px;
+}
 
 .race-card {
   background: var(--card);
@@ -256,18 +312,44 @@ h1 {
   margin-bottom: 16px;
 }
 
-.race-card h3 { margin-top: 0; color: var(--accent2); }
+.race-card h3 {
+  margin-top: 0;
+  color: var(--accent2);
+}
 
-.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
 
-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-th, td { padding: 6px 8px; text-align: left; border-bottom: 1px solid var(--border); white-space: nowrap; }
-th { color: var(--muted); font-weight: 500; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+th,
+td {
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+th {
+  color: var(--muted);
+  font-weight: 500;
+}
 
 @media (max-width: 700px) {
-  .race-card { padding: 12px; }
-  table { font-size: 0.78rem; }
-  th, td { padding: 5px 6px; }
+  .race-card {
+    padding: 12px;
+  }
+  table {
+    font-size: 0.78rem;
+  }
+  th,
+  td {
+    padding: 5px 6px;
+  }
 }
 
 .prob-bar {
@@ -279,11 +361,21 @@ th { color: var(--muted); font-weight: 500; }
   margin-right: 6px;
 }
 
-.prob-cell { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.prob-cell {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
 
-.top-pick { background: rgba(46, 204, 113, 0.12); }
+.top-pick {
+  background: rgba(46, 204, 113, 0.12);
+}
 
-.horse-cell { position: relative; max-width: 120px; }
+.horse-cell {
+  position: relative;
+  max-width: 120px;
+}
 
 .horse-name {
   display: inline-block;
@@ -316,18 +408,36 @@ th { color: var(--muted); font-weight: 500; }
   z-index: 20;
 }
 
-.horse-tooltip strong { display: block; margin-bottom: 4px; color: var(--accent); }
-.horse-tooltip span { color: var(--muted); }
+.horse-tooltip strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent);
+}
+.horse-tooltip span {
+  color: var(--muted);
+}
 
 .horse-cell:hover .horse-tooltip,
-.horse-cell.open .horse-tooltip { display: block; }
+.horse-cell.open .horse-tooltip {
+  display: block;
+}
 
-.last6 { display: flex; gap: 4px; }
+.last6 {
+  display: flex;
+  gap: 4px;
+}
 .last6 span {
-  width: 20px; height: 20px;
+  width: 20px;
+  height: 20px;
   border-radius: 4px;
-  display: flex; align-items: center; justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 0.7rem;
   background: var(--border);
 }
-.last6 span.win { background: var(--accent); color: #0a0a0a; font-weight: 700; }
+.last6 span.win {
+  background: var(--accent);
+  color: #0a0a0a;
+  font-weight: 700;
+}

@@ -1,32 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>At Yarışı Analiz Paneli</title>
-<link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <div class="header-left">
-      <div class="tabs">
-        <button class="tab-btn active" data-day="today">Bugün</button>
-        <button class="tab-btn" data-day="tomorrow">Yarın</button>
-        <button id="refreshBtn">🔄 Yenile</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>At Yarışı Analiz Paneli</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <div class="tabs">
+          <button class="tab-btn active" data-day="today">Bugün</button>
+          <button class="tab-btn" data-day="tomorrow">Yarın</button>
+          <button id="refreshBtn">🔄 Yenile</button>
+        </div>
+        <div id="status"></div>
       </div>
-      <div id="status"></div>
+      <h1>At Yarışı Analiz Paneli</h1>
+      <img src="logo.jpg" alt="Logo" class="site-logo" />
+    </header>
+
+    <div class="layout">
+      <aside id="citySidebar" class="city-sidebar"></aside>
+      <main id="content" class="race-content">
+        <p class="loading">Veriler yükleniyor...</p>
+      </main>
     </div>
-    <h1>🐎 At Yarışı Analiz Paneli</h1>
-    <img src="logo.jpg" alt="Logo" class="site-logo" />
-  </header>
 
-  <div class="layout">
-    <aside id="citySidebar" class="city-sidebar"></aside>
-    <main id="content" class="race-content">
-      <p class="loading">Veriler yükleniyor...</p>
-    </main>
-  </div>
-
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>

@@ -129,7 +129,14 @@ function renderRace(race) {
               (h, i) => `
             <tr class="${i === 0 ? "top-pick" : ""}">
               <td>${h.no || "-"}</td>
-              <td><strong>${h.name}</strong><br><small>${h.pedigri || ""}</small></td>
+              <td class="horse-cell">
+                <span class="horse-name">${h.name}</span>
+                <div class="horse-tooltip">
+                  <strong>${h.name}</strong>
+                  ${h.pedigri ? `<div>${h.pedigri}</div>` : ""}
+                  ${h.antrenor ? `<div><span>Antrenör:</span> ${h.antrenor}</div>` : ""}
+                </div>
+              </td>
               <td>${h.jokey || "-"}</td>
               <td>${h.yas || "-"}</td>
               <td>${h.kilo || "-"}</td>
@@ -171,6 +178,34 @@ document.querySelectorAll(".tab-btn").forEach((btn) => {
 document.getElementById("refreshBtn").addEventListener("click", async () => {
   await fetch("/api/cache/clear", { method: "POST" });
   loadData(currentDay);
+});
+
+// Dokunmatik (mobil) cihazlarda tooltip'i tıklayarak ac/kapat.
+// Masaustunde mouse hover zaten CSS ile calisiyor; bu sadece tap icin ek destek.
+content.addEventListener("click", (e) => {
+  const nameEl = e.target.closest(".horse-name");
+  const tooltipEl = e.target.closest(".horse-tooltip");
+  const openCell = document.querySelector(".horse-cell.open");
+
+  if (nameEl) {
+    const cell = nameEl.closest(".horse-cell");
+    const alreadyOpen = cell.classList.contains("open");
+    document.querySelectorAll(".horse-cell.open").forEach((c) => c.classList.remove("open"));
+    if (!alreadyOpen) cell.classList.add("open");
+    e.stopPropagation();
+    return;
+  }
+
+  if (tooltipEl) {
+    e.stopPropagation();
+    return;
+  }
+
+  if (openCell) openCell.classList.remove("open");
+});
+
+document.addEventListener("click", () => {
+  document.querySelectorAll(".horse-cell.open").forEach((c) => c.classList.remove("open"));
 });
 
 loadData(currentDay);

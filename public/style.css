@@ -30,7 +30,7 @@ body::before {
   inset: 0;
   z-index: -2;
   background:
-    url("2.jfif") center center / cover no-repeat fixed,
+    url("1.jpg") center center / cover no-repeat fixed,
     var(--bg);
 }
 
